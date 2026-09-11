@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Preise – Orbiq</title>
+<meta name="description" content="Einfache Preise, die mit dir wachsen. Kostenlos starten, jederzeit upgraden.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%237C3AED'/%3E%3Cellipse cx='12' cy='12' rx='8.5' ry='3.4' transform='rotate(-25 12 12)' fill='none' stroke='white' stroke-width='1.6'/%3E%3Ccircle cx='12' cy='12' r='2' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+
+<!-- Icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="4,13 9,18 20,6"/></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+    <symbol id="icon-orbit" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="9.5" ry="3.8" transform="rotate(-25 12 12)"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/><circle cx="20.1" cy="8.4" r="1.4" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="11" rx="4"/><polygon points="8,16 8,20 12.5,16"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3 C8.2 7 8.2 17 12 21 C15.8 17 15.8 7 12 3 Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><polyline points="3.5,7 12,13 20.5,7"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1.2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12.5" y2="16"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="index.html">
+      <span class="brand-mark" aria-hidden="true"><svg class="icon" style="stroke:#fff;width:19px;height:19px"><use href="#icon-orbit"/></svg></span>
+      Orbiq
+    </a>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="index.html">Start</a>
+      <a href="features.html">Funktionen</a>
+      <a href="pricing.html" aria-current="page">Preise</a>
+      <a href="contact.html">Kontakt</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="nav-login" href="#">Anmelden</a>
+      <a class="btn btn-primary" href="pricing.html">Kostenlos starten</a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" id="nav-toggle">
+      <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"/></svg>
+      <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"/></svg>
+      <span class="sr-only">Menü öffnen</span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="container">
+      <ul class="mobile-menu-list">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="features.html">Funktionen</a></li>
+        <li><a href="pricing.html" aria-current="page">Preise</a></li>
+        <li><a href="contact.html">Kontakt</a></li>
+        <li><a class="nav-login" href="#">Anmelden</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a class="btn btn-primary btn-block" href="pricing.html">Kostenlos starten</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Preise</span>
+      <h1>Einfache Preise, die mit dir wachsen</h1>
+      <p>Starte kostenlos. Upgrade, sobald dein Team mehr Power braucht.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="billing-toggle">
+        <span data-active="true" id="label-monthly">Monatlich</span>
+        <label class="switch">
+          <input type="checkbox" id="billing-switch" aria-describedby="save-hint">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </label>
+        <span data-active="false" id="label-annual">Jährlich</span>
+        <span class="save-badge" id="save-hint">ca. 20 % sparen</span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p class="plan-desc">Für Einzelpersonen und kleine Teams am Anfang.</p>
+          <div class="price-amount">
+            <span class="amount">0&nbsp;€</span>
+            <span class="period">/ Monat</span>
+          </div>
+          <p class="price-note">Dauerhaft kostenlos</p>
+          <a class="btn btn-outline btn-block" href="contact.html">Kostenlos starten</a>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Bis zu 3 Automatisierungen</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> 1 Workspace</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Basis-Vorlagen</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Community-Support</li>
+          </ul>
+        </div>
+
+        <div class="price-card is-popular">
+          <span class="popular-badge">Beliebteste Wahl</span>
+          <h3>Pro</h3>
+          <p class="plan-desc">Für Teams, die skalieren wollen.</p>
+          <div class="price-amount">
+            <span class="amount" data-monthly="19&nbsp;€" data-annual="15&nbsp;€">19&nbsp;€</span>
+            <span class="period">/ Monat pro Nutzer</span>
+          </div>
+          <p class="price-note" data-monthly="Monatlich kündbar" data-annual="Jährliche Abrechnung, ca. 20 % gespart">Monatlich kündbar</p>
+          <a class="btn btn-primary btn-block" href="contact.html">Kostenlos testen</a>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Unbegrenzte Automatisierungen</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> KI-Regel-Generator</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Priorisierter Support</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Alle Integrationen</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <h3>Enterprise</h3>
+          <p class="plan-desc">Für Organisationen mit hohen Anforderungen.</p>
+          <div class="price-amount">
+            <span class="amount" data-monthly="39&nbsp;€" data-annual="32&nbsp;€">39&nbsp;€</span>
+            <span class="period">/ Monat pro Nutzer</span>
+          </div>
+          <p class="price-note" data-monthly="Monatlich kündbar" data-annual="Jährliche Abrechnung, ca. 20 % gespart">Monatlich kündbar</p>
+          <a class="btn btn-outline btn-block" href="contact.html">Vertrieb kontaktieren</a>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Alles aus Pro</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> SSO &amp; SAML</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Audit-Logs</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Dedizierter Erfolgsmanager</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-muted" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">FAQ</span>
+        <h2>Häufig gestellte Fragen</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              Gibt es einen kostenlosen Plan?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+            <p>Ja, Starter ist dauerhaft kostenlos für bis zu 3 aktive Automatisierungen.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              Kann ich jederzeit wechseln?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+            <p>Ja, Upgrade oder Downgrade sind jederzeit in den Workspace-Einstellungen möglich.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              Wie funktioniert die KI-Automatisierung?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+            <p>Du beschreibst dein Ziel in normaler Sprache. Orbiq schlägt passende Automatisierungen vor, die du vor der Aktivierung prüfst.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              Ist Orbiq sicher für den Enterprise-Einsatz?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+            <p>Ja. Enterprise bietet SSO, Audit-Logs und granulare Rechteverwaltung.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              Was passiert nach der Testphase?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+            <p>Du wählst einen bezahlten Plan oder wechselst zum kostenlosen Starter-Plan — deine Daten bleiben erhalten.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Noch Fragen zu den Plänen?</h2>
+        <p>Unser Team hilft dir, den richtigen Plan für dein Team zu finden.</p>
+        <a class="btn btn-primary" href="contact.html">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <span class="brand-mark" aria-hidden="true"><svg class="icon" style="stroke:#fff;width:19px;height:19px"><use href="#icon-orbit"/></svg></span>
+          Orbiq
+        </a>
+        <p>KI-Automatisierung für Teams, die schneller liefern wollen.</p>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Produkt</h4>
+          <ul>
+            <li><a href="index.html">Start</a></li>
+            <li><a href="features.html">Funktionen</a></li>
+            <li><a href="pricing.html">Preise</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Karriere</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ressourcen</h4>
+          <ul>
+            <li><a href="#">Hilfe-Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">API-Dokumentation</a></li>
+            <li><a href="#">Systemstatus</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+            <li><a href="#">Sicherheit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Orbiq Inc. Alle Rechte vorbehalten.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Website"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-globe"/></svg></a>
+        <a href="#" aria-label="E-Mail"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-mail"/></svg></a>
+        <a href="#" aria-label="Community"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-chat"/></svg></a>
+        <a href="#" aria-label="Dokumentation"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-file"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

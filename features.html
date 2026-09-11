@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Orbiq – KI-Automatisierung für Teams</title>
-<meta name="description" content="Orbiq automatisiert Übergaben, Entscheidungen und Routineaufgaben mit KI. Kostenlos starten, keine Kreditkarte nötig.">
+<title>Funktionen – Orbiq</title>
+<meta name="description" content="Von KI-gestützter Automatisierung bis Enterprise-Sicherheit — alle Orbiq-Funktionen im Überblick.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap">
@@ -45,8 +45,8 @@
     </a>
 
     <nav class="nav-links" aria-label="Hauptnavigation">
-      <a href="index.html" aria-current="page">Start</a>
-      <a href="features.html">Funktionen</a>
+      <a href="index.html">Start</a>
+      <a href="features.html" aria-current="page">Funktionen</a>
       <a href="pricing.html">Preise</a>
       <a href="contact.html">Kontakt</a>
     </nav>
@@ -66,8 +66,8 @@
   <div class="mobile-menu" id="mobile-menu" hidden>
     <div class="container">
       <ul class="mobile-menu-list">
-        <li><a href="index.html" aria-current="page">Start</a></li>
-        <li><a href="features.html">Funktionen</a></li>
+        <li><a href="index.html">Start</a></li>
+        <li><a href="features.html" aria-current="page">Funktionen</a></li>
         <li><a href="pricing.html">Preise</a></li>
         <li><a href="contact.html">Kontakt</a></li>
         <li><a class="nav-login" href="#">Anmelden</a></li>
@@ -80,88 +80,90 @@
 </header>
 
 <main id="main">
-  <!-- Hero with WebGL shader background -->
-  <section class="hero">
-    <canvas class="hero-canvas" id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-scrim" aria-hidden="true"></div>
-    <div class="container hero-content">
-      <span class="trust-badge">
-        <svg class="icon icon-fill" aria-hidden="true"><use href="#icon-star"/></svg>
-        Vertraut von zukunftsorientierten Teams
-      </span>
-      <h1>Bring deinen Workflow<span>auf Orbit-Kurs</span></h1>
-      <p class="hero-subtitle">Orbiq automatisiert Übergaben, Entscheidungen und Routineaufgaben mit KI — schnell, nahtlos und ohne Grenzen für Teams der nächsten Generation.</p>
-      <div class="hero-actions">
-        <a class="btn btn-primary" href="pricing.html">
-          Kostenlos starten
-          <svg class="icon" aria-hidden="true" style="width:18px;height:18px"><use href="#icon-arrow-right"/></svg>
-        </a>
-        <a class="btn btn-secondary" href="features.html">Funktionen entdecken</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Stats -->
-  <section class="section-tight" aria-label="Kennzahlen">
+  <section class="page-hero">
     <div class="container">
-      <div class="stats-grid">
-        <div>
-          <div class="stat-value">18.000+</div>
-          <div class="stat-label">Aktive Automatisierungen</div>
-        </div>
-        <div>
-          <div class="stat-value">4,2&nbsp;Mio.+</div>
-          <div class="stat-label">Aufgaben/Monat automatisiert</div>
-        </div>
-        <div>
-          <div class="stat-value">99,98&nbsp;%</div>
-          <div class="stat-label">Verfügbarkeit (SLA)</div>
-        </div>
-        <div>
-          <div class="stat-value">4,9/5</div>
-          <div class="stat-label">Bewertung von Teams</div>
-        </div>
-      </div>
+      <span class="eyebrow">Funktionen</span>
+      <h1>Alles, was dein Team braucht, um schneller zu arbeiten</h1>
+      <p>Von KI-Automatisierung bis Enterprise-Sicherheit — entdecke, was Orbiq für dein Team tun kann.</p>
     </div>
   </section>
 
-  <!-- Features preview -->
-  <section class="section section-muted" id="features">
+  <section class="section">
     <div class="container">
-      <div class="section-header">
-        <span class="eyebrow">Funktionen</span>
-        <h2>Alles, was dein Team braucht, um schneller zu arbeiten</h2>
-        <p>Ein kurzer Einblick — die vollständige Übersicht findest du auf der Funktionen-Seite.</p>
+      <div class="feature-category">
+        <h2 class="feature-category-title">
+          <svg class="icon" aria-hidden="true"><use href="#icon-bolt"/></svg>
+          Automatisierung
+        </h2>
+        <div class="feature-grid">
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bolt"/></svg></div>
+            <h3>KI-gestützte Regeln</h3>
+            <p>Beschreibe in einfachen Worten, was passieren soll — Orbiq baut die Automatisierung.</p>
+          </div>
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-link"/></svg></div>
+            <h3>Auslöser &amp; Aktionen</h3>
+            <p>Verbinde hunderte Trigger mit beliebigen Aktionen, ganz ohne Code.</p>
+          </div>
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-file"/></svg></div>
+            <h3>Vorlagen-Bibliothek</h3>
+            <p>Starte mit bewährten Vorlagen für die häufigsten Team-Workflows.</p>
+          </div>
+        </div>
       </div>
 
-      <div class="feature-grid">
-        <div class="card">
-          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bolt"/></svg></div>
-          <h3>KI-Automatisierung</h3>
-          <p>Erkennt Muster in eurer Arbeit und übernimmt Routineaufgaben automatisch.</p>
-        </div>
-        <div class="card">
-          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-orbit"/></svg></div>
-          <h3>Workflows in Minuten</h3>
-          <p>Baue komplexe Automatisierungen per Drag-and-Drop, ganz ohne Code.</p>
-        </div>
-        <div class="card">
-          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg></div>
-          <h3>Sicher &amp; konform</h3>
-          <p>SSO, Audit-Logs und granulare Rechte — enterprise-ready von Tag eins.</p>
+      <div class="feature-category">
+        <h2 class="feature-category-title">
+          <svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg>
+          Zusammenarbeit
+        </h2>
+        <div class="feature-grid">
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-users"/></svg></div>
+            <h3>Gemeinsame Workspaces</h3>
+            <p>Ein Ort für dein ganzes Team, mit klaren Zuständigkeiten.</p>
+          </div>
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg></div>
+            <h3>Echtzeit-Kommentare</h3>
+            <p>Diskutiere Entscheidungen direkt am Workflow, ohne Tool-Wechsel.</p>
+          </div>
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg></div>
+            <h3>Rollen &amp; Freigaben</h3>
+            <p>Granulare Rechte sorgen dafür, dass jeder nur sieht, was relevant ist.</p>
+          </div>
         </div>
       </div>
 
-      <div style="text-align:center; margin-top: var(--space-7)">
-        <a class="btn btn-outline" href="features.html">
-          Alle Funktionen ansehen
-          <svg class="icon" aria-hidden="true" style="width:18px;height:18px"><use href="#icon-arrow-right"/></svg>
-        </a>
+      <div class="feature-category">
+        <h2 class="feature-category-title">
+          <svg class="icon" aria-hidden="true"><use href="#icon-bar-chart"/></svg>
+          Einblicke
+        </h2>
+        <div class="feature-grid">
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bar-chart"/></svg></div>
+            <h3>Live-Dashboards</h3>
+            <p>Behalte den Status aller Automatisierungen in Echtzeit im Blick.</p>
+          </div>
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-file"/></svg></div>
+            <h3>Automatisierte Reports</h3>
+            <p>Regelmäßige Reports landen automatisch da, wo sie gebraucht werden.</p>
+          </div>
+          <div class="card">
+            <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg></div>
+            <h3>Anomalie-Erkennung</h3>
+            <p>Orbiq meldet sich, bevor aus einer Kleinigkeit ein Problem wird.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Final CTA -->
   <section class="section-tight">
     <div class="container">
       <div class="cta-banner">
@@ -235,6 +237,5 @@
 </footer>
 
 <script src="js/main.js"></script>
-<script src="js/shader-hero.js"></script>
 </body>
 </html>
