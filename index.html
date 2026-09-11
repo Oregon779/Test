@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flowbase – Projektmanagement ohne Chaos</title>
+<meta name="description" content="Flowbase bündelt Aufgaben, Dokumente und Absprachen deines Teams an einem Ort. 14 Tage kostenlos testen, keine Kreditkarte nötig.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Crect width='24' height='24' rx='6' fill='%232563EB'/%3E%3Crect x='4.5' y='5' width='4' height='14' rx='1' fill='white'/%3E%3Crect x='10' y='5' width='4' height='9' rx='1' fill='white'/%3E%3Crect x='15.5' y='5' width='4' height='11' rx='1' fill='white'/%3E%3C/svg%3E">
+</head>
+<body>
+<a class="skip-link" href="#main">Zum Hauptinhalt springen</a>
+
+<!-- Icon sprite (decorative + labelled icons reused via <use>) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="20" y2="18"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><line x1="5" y1="5" x2="19" y2="19"/><line x1="19" y1="5" x2="5" y2="19"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><polyline points="4,13 9,18 20,6"/></symbol>
+    <symbol id="icon-chevron-down" viewBox="0 0 24 24"><polyline points="6,9 12,15 18,9"/></symbol>
+    <symbol id="icon-board" viewBox="0 0 24 24"><rect x="3.5" y="4" width="4.5" height="16" rx="1.2"/><rect x="9.75" y="4" width="4.5" height="10" rx="1.2"/><rect x="16" y="4" width="4.5" height="13" rx="1.2"/></symbol>
+    <symbol id="icon-chat" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="11" rx="4"/><polygon points="8,16 8,20 12.5,16"/></symbol>
+    <symbol id="icon-bolt" viewBox="0 0 24 24"><polygon points="13,2 5,13 11,13 10,22 19,10 13,10"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"/><line x1="15.3" y1="15.3" x2="20.5" y2="20.5"/></symbol>
+    <symbol id="icon-link" viewBox="0 0 24 24"><circle cx="9.5" cy="12" r="6"/><circle cx="15.5" cy="12" r="6"/></symbol>
+    <symbol id="icon-shield" viewBox="0 0 24 24"><polygon points="12,3 19,6.2 19,11.5 12,21 5,11.5 5,6.2"/><polyline points="8.5,12 11,14.5 15.5,9"/></symbol>
+    <symbol id="icon-star" viewBox="0 0 24 24"><polygon points="12,2.5 14.8,9 22,9.6 16.5,14.3 18.2,21.3 12,17.5 5.8,21.3 7.5,14.3 2,9.6 9.2,9"/></symbol>
+    <symbol id="icon-arrow-right" viewBox="0 0 24 24"><line x1="4" y1="12" x2="18" y2="12"/><polyline points="12,6 18,12 12,18"/></symbol>
+    <symbol id="icon-globe" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><line x1="3" y1="12" x2="21" y2="12"/><path d="M12 3 C8.2 7 8.2 17 12 21 C15.8 17 15.8 7 12 3 Z"/></symbol>
+    <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2"/><polyline points="3.5,7 12,13 20.5,7"/></symbol>
+    <symbol id="icon-file" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="1.2"/><line x1="9" y1="8" x2="15" y2="8"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="12.5" y2="16"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark" aria-hidden="true"><svg class="icon" style="stroke:#fff"><use href="#icon-board"/></svg></span>
+      Flowbase
+    </a>
+
+    <nav class="nav-links" aria-label="Hauptnavigation">
+      <a href="#features">Funktionen</a>
+      <a href="#how-it-works">So funktioniert's</a>
+      <a href="#pricing">Preise</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+
+    <div class="nav-actions">
+      <a class="nav-login" href="#">Anmelden</a>
+      <a class="btn btn-primary" href="#pricing">Kostenlos starten</a>
+    </div>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" id="nav-toggle">
+      <svg class="icon icon-menu" aria-hidden="true"><use href="#icon-menu"/></svg>
+      <svg class="icon icon-close" aria-hidden="true"><use href="#icon-close"/></svg>
+      <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Menü öffnen</span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="container">
+      <ul class="mobile-menu-list">
+        <li><a href="#features">Funktionen</a></li>
+        <li><a href="#how-it-works">So funktioniert's</a></li>
+        <li><a href="#pricing">Preise</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a class="nav-login" href="#">Anmelden</a></li>
+      </ul>
+      <div class="mobile-cta">
+        <a class="btn btn-primary btn-block" href="#pricing">Kostenlos starten</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <!-- Hero -->
+  <section class="hero" id="top">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <h1>Nie wieder den Überblick verlieren</h1>
+        <p class="hero-subtitle">Flowbase bündelt Aufgaben, Dokumente und Absprachen deines Teams an einem Ort — übersichtlich, schnell und ohne Excel-Chaos.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#pricing">
+            Kostenlos testen
+            <svg class="icon" aria-hidden="true" style="width:18px;height:18px"><use href="#icon-arrow-right"/></svg>
+          </a>
+          <a class="btn btn-secondary" href="#how-it-works">So funktioniert's ansehen</a>
+        </div>
+        <p class="hero-trust">Keine Kreditkarte nötig · 14 Tage kostenlos testen · Jederzeit kündbar</p>
+      </div>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div class="mockup-card">
+          <div class="mockup-titlebar">
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span>Projekt-Board · Launch Q3</span>
+          </div>
+
+          <div class="mockup-row">
+            <span class="mockup-check is-done"></span>
+            <span class="mockup-line" style="width:55%"></span>
+            <span class="mockup-avatar" style="background:#2563EB">JM</span>
+            <span class="mockup-tag tag-done">Fertig</span>
+          </div>
+          <div class="mockup-row">
+            <span class="mockup-check"></span>
+            <span class="mockup-line w-70"></span>
+            <span class="mockup-avatar" style="background:#EA580C">PA</span>
+            <span class="mockup-tag tag-progress">In Arbeit</span>
+          </div>
+          <div class="mockup-row">
+            <span class="mockup-check"></span>
+            <span class="mockup-line" style="width:40%"></span>
+            <span class="mockup-avatar" style="background:#15803D">SO</span>
+            <span class="mockup-tag tag-review">Review</span>
+          </div>
+
+          <div class="mockup-progress-label">
+            <span>Fortschritt</span>
+            <strong>68 %</strong>
+          </div>
+          <div class="mockup-progress-track">
+            <div class="mockup-progress-fill"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="section-tight" aria-label="Kennzahlen">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-value">12.000+</div>
+          <div class="stat-label">Aktive Workspaces</div>
+        </div>
+        <div>
+          <div class="stat-value">2,4&nbsp;Mio.+</div>
+          <div class="stat-label">Erledigte Aufgaben</div>
+        </div>
+        <div>
+          <div class="stat-value">99,95&nbsp;%</div>
+          <div class="stat-label">Verfügbarkeit (SLA)</div>
+        </div>
+        <div>
+          <div class="stat-value">4,8/5</div>
+          <div class="stat-label">Durchschnittliche Bewertung</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="section section-muted" id="features">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Funktionen</span>
+        <h2>Alles, was dein Team braucht – mehr nicht</h2>
+        <p>Entwickelt für Teams, die lieber liefern als Tabellen pflegen.</p>
+      </div>
+
+      <div class="feature-grid">
+        <div class="card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-board"/></svg></div>
+          <h3>Intelligente Task-Boards</h3>
+          <p>Kanban, Liste oder Zeitachse — wechsle die Ansicht, ohne den Überblick zu verlieren.</p>
+        </div>
+        <div class="card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg></div>
+          <h3>Zusammenarbeit in Echtzeit</h3>
+          <p>Kommentieren, erwähnen und klären — direkt in der Aufgabe, ohne Kontextwechsel.</p>
+        </div>
+        <div class="card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-bolt"/></svg></div>
+          <h3>Automatisierungsregeln</h3>
+          <p>Wiederkehrende Übergaben automatisch erledigen lassen, ganz ohne Code.</p>
+        </div>
+        <div class="card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-search"/></svg></div>
+          <h3>Blitzschnelle Suche</h3>
+          <p>Finde jede Aufgabe, jedes Dokument und jede Nachricht in Sekunden.</p>
+        </div>
+        <div class="card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-link"/></svg></div>
+          <h3>Tiefe Integrationen</h3>
+          <p>Verbinde die Tools, die du schon nutzt — ganz ohne doppelte Datenpflege.</p>
+        </div>
+        <div class="card">
+          <div class="feature-icon"><svg class="icon" aria-hidden="true"><use href="#icon-shield"/></svg></div>
+          <h3>Sicherheit auf Enterprise-Niveau</h3>
+          <p>SSO, Audit-Logs und granulare Rechte von Anfang an eingebaut.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section class="section" id="how-it-works">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">So funktioniert's</span>
+        <h2>In wenigen Minuten startklar</h2>
+        <p>Kein Setup-Marathon. Kein IT-Ticket. Einfach loslegen.</p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Workspace erstellen</h3>
+          <p>Richte den digitalen Arbeitsplatz deines Teams in unter zwei Minuten ein.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Team einladen</h3>
+          <p>Alle mit einem Link an Bord holen — inklusive Rollen und Rechten.</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Loslegen</h3>
+          <p>Erstes Board anlegen und aus Plänen fertige Ergebnisse machen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-muted">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Kundenstimmen</span>
+        <h2>Beliebt bei Teams, die liefern</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <figure class="card">
+          <div class="testimonial-stars" aria-hidden="true">
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+          </div>
+          <blockquote>„Flowbase hat unsere Status-Meetings halbiert. Alles Wichtige steht schon im Board."</blockquote>
+          <figcaption class="testimonial-author">
+            <span class="author-avatar" style="background:#2563EB">JR</span>
+            <span>
+              <span class="author-name" style="display:block">Jonas Reinhardt</span>
+              <span class="author-role">Head of Operations, Nordlicht Studio</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="card">
+          <div class="testimonial-stars" aria-hidden="true">
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+          </div>
+          <blockquote>„Allein die Automatisierungsregeln haben sich ausgezahlt. Übergaben zwischen Design und Entwicklung gehen nicht mehr verloren."</blockquote>
+          <figcaption class="testimonial-author">
+            <span class="author-avatar" style="background:#EA580C">PA</span>
+            <span>
+              <span class="author-name" style="display:block">Priya Anand</span>
+              <span class="author-role">Engineering Manager, Cobalt Robotics</span>
+            </span>
+          </figcaption>
+        </figure>
+
+        <figure class="card">
+          <div class="testimonial-stars" aria-hidden="true">
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+            <svg class="icon icon-fill"><use href="#icon-star"/></svg>
+          </div>
+          <blockquote>„Der Wechsel von drei Tools auf eines war die beste Entscheidung dieses Jahr."</blockquote>
+          <figcaption class="testimonial-author">
+            <span class="author-avatar" style="background:#15803D">SO</span>
+            <span>
+              <span class="author-name" style="display:block">Sam Okafor</span>
+              <span class="author-role">Gründer, Driftwood Goods</span>
+            </span>
+          </figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">Preise</span>
+        <h2>Einfache Preise, die mitwachsen</h2>
+        <p>Kostenlos starten. Upgraden, wenn dein Team mehr braucht.</p>
+      </div>
+
+      <div class="billing-toggle">
+        <span data-active="true" id="label-monthly">Monatlich</span>
+        <label class="switch">
+          <input type="checkbox" id="billing-switch" aria-describedby="save-hint">
+          <span class="switch-track"></span>
+          <span class="switch-thumb"></span>
+        </label>
+        <span data-active="false" id="label-annual">Jährlich</span>
+        <span class="save-badge" id="save-hint">ca. 17 % sparen</span>
+      </div>
+
+      <div class="pricing-grid">
+        <div class="price-card">
+          <h3>Starter</h3>
+          <p class="plan-desc">Für Einzelpersonen und kleine Teams am Anfang.</p>
+          <div class="price-amount">
+            <span class="amount">0&nbsp;€</span>
+            <span class="period">/ Monat</span>
+          </div>
+          <p class="price-note">Dauerhaft kostenlos</p>
+          <a class="btn btn-outline btn-block" href="#">Kostenlos starten</a>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Bis zu 5 Mitglieder</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> 3 Boards</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Basis-Automatisierung</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Community-Support</li>
+          </ul>
+        </div>
+
+        <div class="price-card is-popular">
+          <span class="popular-badge">Beliebteste Wahl</span>
+          <h3>Pro</h3>
+          <p class="plan-desc">Für wachsende Teams, die mehr Power brauchen.</p>
+          <div class="price-amount">
+            <span class="amount" data-monthly="12&nbsp;€" data-annual="10&nbsp;€">12&nbsp;€</span>
+            <span class="period">/ Monat pro Nutzer</span>
+          </div>
+          <p class="price-note" data-monthly="Monatlich kündbar" data-annual="Jährliche Abrechnung, 2 Monate gratis">Monatlich kündbar</p>
+          <a class="btn btn-primary btn-block" href="#">Kostenlos testen</a>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Unbegrenzte Boards</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Erweiterte Automatisierung</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Integrationen</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Priorisierter Support</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Gastzugänge</li>
+          </ul>
+        </div>
+
+        <div class="price-card">
+          <h3>Business</h3>
+          <p class="plan-desc">Für Organisationen, die Kontrolle im großen Maßstab brauchen.</p>
+          <div class="price-amount">
+            <span class="amount" data-monthly="24&nbsp;€" data-annual="20&nbsp;€">24&nbsp;€</span>
+            <span class="period">/ Monat pro Nutzer</span>
+          </div>
+          <p class="price-note" data-monthly="Monatlich kündbar" data-annual="Jährliche Abrechnung, 2 Monate gratis">Monatlich kündbar</p>
+          <a class="btn btn-outline btn-block" href="#">Vertrieb kontaktieren</a>
+          <ul class="plan-features">
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Alles aus Pro</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> SSO &amp; SAML</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Audit-Logs</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Erweiterte Rechteverwaltung</li>
+            <li><svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg> Dedizierter Support</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-muted" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <span class="eyebrow">FAQ</span>
+        <h2>Häufig gestellte Fragen</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              Gibt es einen kostenlosen Plan?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+            <p>Ja. Starter ist dauerhaft kostenlos für bis zu 5 Teammitglieder, ganz ohne Kreditkarte.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              Kann ich später den Plan wechseln?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+            <p>Klar. Upgrade, Downgrade oder Kündigung sind jederzeit in den Workspace-Einstellungen möglich.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              Lässt sich Flowbase mit unseren bestehenden Tools verbinden?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+            <p>Pro und Business bieten Integrationen für gängige Kalender-, Speicher- und Chat-Tools — weitere kommen laufend dazu.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              Sind unsere Daten sicher?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+            <p>Alle Daten werden verschlüsselt übertragen und gespeichert. Business ergänzt SSO, Audit-Logs und granulare Rechteverwaltung.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3>
+            <button class="faq-question" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              Was passiert nach Ablauf der Testphase?
+              <svg class="icon" aria-hidden="true"><use href="#icon-chevron-down"/></svg>
+            </button>
+          </h3>
+          <div class="faq-answer" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+            <p>Du wählst einen bezahlten Plan oder wechselst zum kostenlosen Starter-Plan — deine Daten bleiben in jedem Fall erhalten.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="section-tight">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Bereit, Ordnung in die Arbeit deines Teams zu bringen?</h2>
+        <p>Schließe dich Tausenden Teams an, die mit Flowbase besser liefern.</p>
+        <a class="btn btn-primary" href="#pricing">Jetzt kostenlos starten</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="brand" href="#top">
+          <span class="brand-mark" aria-hidden="true"><svg class="icon" style="stroke:#fff"><use href="#icon-board"/></svg></span>
+          Flowbase
+        </a>
+        <p>Die zentrale Arbeitsoberfläche für Teams, die zuverlässig liefern wollen.</p>
+      </div>
+
+      <div class="footer-links-grid">
+        <div class="footer-col">
+          <h4>Produkt</h4>
+          <ul>
+            <li><a href="#features">Funktionen</a></li>
+            <li><a href="#pricing">Preise</a></li>
+            <li><a href="#how-it-works">So funktioniert's</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Unternehmen</h4>
+          <ul>
+            <li><a href="#">Über uns</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Karriere</a></li>
+            <li><a href="#">Kontakt</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Ressourcen</h4>
+          <ul>
+            <li><a href="#">Hilfe-Center</a></li>
+            <li><a href="#">Community</a></li>
+            <li><a href="#">API-Dokumentation</a></li>
+            <li><a href="#">Systemstatus</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="#">Datenschutz</a></li>
+            <li><a href="#">AGB</a></li>
+            <li><a href="#">Sicherheit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Flowbase Inc. Alle Rechte vorbehalten.</span>
+      <div class="footer-social">
+        <a href="#" aria-label="Website"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-globe"/></svg></a>
+        <a href="#" aria-label="E-Mail"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-mail"/></svg></a>
+        <a href="#" aria-label="Community"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-chat"/></svg></a>
+        <a href="#" aria-label="Dokumentation"><svg class="icon" style="width:18px;height:18px" aria-hidden="true"><use href="#icon-file"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
