@@ -65,4 +65,50 @@
       });
     });
   }
+
+  // Scroll showcase: card tilts flat and title drifts up as the section scrolls through view
+  var scrollHero = document.querySelector(".scroll-hero");
+  var scrollHeroTitle = document.querySelector(".scroll-hero-title");
+  var scrollHeroCard = document.querySelector(".scroll-hero-card");
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (scrollHero && scrollHeroTitle && scrollHeroCard && !reducedMotion) {
+    var ticking = false;
+
+    var clamp = function (value, min, max) {
+      return Math.max(min, Math.min(max, value));
+    };
+
+    var lerp = function (start, end, progress) {
+      return start + (end - start) * progress;
+    };
+
+    var updateScrollHero = function () {
+      ticking = false;
+
+      var rect = scrollHero.getBoundingClientRect();
+      var viewportHeight = window.innerHeight;
+      var scrollable = rect.height - viewportHeight;
+      var progress = scrollable > 0 ? clamp(-rect.top / scrollable, 0, 1) : (rect.top <= 0 ? 1 : 0);
+
+      var isMobile = window.innerWidth < 768;
+      var rotate = lerp(18, 0, progress);
+      var scale = lerp(isMobile ? 0.85 : 1.05, 1, progress);
+      var titleShift = lerp(0, -60, progress);
+
+      scrollHeroCard.style.transform = "rotateX(" + rotate.toFixed(2) + "deg) scale(" + scale.toFixed(3) + ")";
+      scrollHeroTitle.style.transform = "translateY(" + titleShift.toFixed(1) + "px)";
+    };
+
+    var onScroll = function () {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(updateScrollHero);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    updateScrollHero();
+  }
 })();
