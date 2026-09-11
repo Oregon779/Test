@@ -643,65 +643,91 @@ summary:focus-visible {
   background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
 }
 
-/* ---------- Scroll showcase (tilting product card) ---------- */
+/* ---------- Scroll showcase (pinned, dramatic tilt/scale/glow) ---------- */
 .scroll-hero {
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 60rem;
-  padding-block: var(--space-6);
+  height: 220vh;
+  background: radial-gradient(120% 90% at 50% 0%, #1b2a5e 0%, #0b1020 55%, #06070d 100%);
 }
 
 @media (min-width: 768px) {
   .scroll-hero {
-    min-height: 80rem;
+    height: 320vh;
   }
 }
 
+.scroll-hero-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.scroll-hero-glow {
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  width: min(80vw, 900px);
+  height: min(80vw, 900px);
+  transform: translate(-50%, -50%) scale(0.7);
+  opacity: 0.15;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.65) 0%, rgba(234, 88, 12, 0.4) 45%, rgba(6, 7, 13, 0) 72%);
+  filter: blur(70px);
+  pointer-events: none;
+  will-change: transform, opacity;
+}
+
 .scroll-hero-inner {
+  position: relative;
+  z-index: 1;
   width: 100%;
-  perspective: 1200px;
+  perspective: 1800px;
 }
 
 .scroll-hero-title {
   text-align: center;
   margin-bottom: var(--space-8);
-  transform: translateY(0);
   will-change: transform;
 }
 
 .scroll-hero-title .eyebrow {
   display: block;
+  color: #93C5FD;
 }
 
 .scroll-hero-title h2 {
-  font-size: clamp(1.75rem, 1.3rem + 1.8vw, 3rem);
+  color: #F8FAFC;
+  font-size: clamp(1.85rem, 1.2rem + 2.6vw, 3.5rem);
   margin-top: var(--space-2);
 }
 
 .scroll-hero-card-wrap {
+  position: relative;
   display: flex;
   justify-content: center;
-  padding-inline: var(--space-4);
+  padding-inline: var(--space-5);
 }
 
 .scroll-hero-card {
   width: 100%;
-  max-width: 72rem;
+  max-width: 78rem;
   background: var(--color-card);
-  border: 1px solid var(--color-border);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
-  padding: var(--space-5);
-  transform: rotateX(0deg) scale(1);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.04);
+  padding: var(--space-6);
+  transform: translateY(0) rotateX(0deg) scale(1);
   transform-origin: 50% 100%;
-  will-change: transform;
+  opacity: 1;
+  will-change: transform, opacity;
 }
 
 @media (min-width: 768px) {
   .scroll-hero-card {
-    padding: var(--space-7);
+    padding: var(--space-8);
   }
 }
 
@@ -719,10 +745,84 @@ summary:focus-visible {
   padding-block: var(--space-4);
 }
 
+@media (min-width: 768px) {
+  .scroll-hero-card .mockup-titlebar span:last-child {
+    font-size: 1rem;
+  }
+}
+
+.scroll-hero-float {
+  position: absolute;
+  display: none;
+  align-items: center;
+  gap: var(--space-2);
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #F8FAFC;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.45);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  white-space: nowrap;
+  z-index: 2;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.scroll-hero-float .icon {
+  width: 18px;
+  height: 18px;
+}
+
+.scroll-hero-float--done {
+  top: 6%;
+  left: 2%;
+}
+
+.scroll-hero-float--done .icon {
+  color: #4ADE80;
+}
+
+.scroll-hero-float--chat {
+  bottom: 8%;
+  right: 2%;
+}
+
+.scroll-hero-float--chat .icon {
+  color: #60A5FA;
+}
+
+@media (min-width: 768px) {
+  .scroll-hero-float {
+    display: flex;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
+  .scroll-hero {
+    height: auto;
+    padding-block: var(--space-8);
+  }
+
+  .scroll-hero-sticky {
+    position: static;
+    height: auto;
+  }
+
+  .scroll-hero-glow {
+    opacity: 0.3;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  .scroll-hero-float {
+    display: none !important;
+  }
+
   .scroll-hero-title,
   .scroll-hero-card {
     transform: none !important;
+    opacity: 1 !important;
   }
 }
 

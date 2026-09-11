@@ -160,14 +160,25 @@
 
   <!-- Scroll showcase -->
   <section class="scroll-hero" aria-label="Produkt-Vorschau">
-    <div class="container scroll-hero-inner">
-      <div class="scroll-hero-title">
-        <span class="eyebrow">Live-Ansicht</span>
-        <h2>So arbeitet dein Team ab jetzt<br>Alles sichtbar. Nichts vergessen.</h2>
-      </div>
+    <div class="scroll-hero-sticky">
+      <div class="scroll-hero-glow" aria-hidden="true"></div>
+      <div class="container scroll-hero-inner">
+        <div class="scroll-hero-title">
+          <span class="eyebrow">Live-Ansicht</span>
+          <h2>So arbeitet dein Team ab jetzt<br>Alles sichtbar. Nichts vergessen.</h2>
+        </div>
 
-      <div class="scroll-hero-card-wrap">
-        <div class="scroll-hero-card">
+        <div class="scroll-hero-card-wrap">
+          <div class="scroll-hero-float scroll-hero-float--done" aria-hidden="true">
+            <svg class="icon" aria-hidden="true"><use href="#icon-check"/></svg>
+            Aufgabe erledigt
+          </div>
+          <div class="scroll-hero-float scroll-hero-float--chat" aria-hidden="true">
+            <svg class="icon" aria-hidden="true"><use href="#icon-chat"/></svg>
+            3 neue Kommentare
+          </div>
+
+          <div class="scroll-hero-card">
           <div class="mockup-card" aria-hidden="true">
             <div class="mockup-titlebar">
               <span class="mockup-dot"></span>
@@ -208,6 +219,7 @@
             <div class="mockup-progress-track">
               <div class="mockup-progress-fill"></div>
             </div>
+          </div>
           </div>
         </div>
       </div>
